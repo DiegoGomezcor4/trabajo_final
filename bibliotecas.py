@@ -7,11 +7,11 @@ def agregar_libro(libros, titulo, autor, editorial, año_publicacion, genero, ca
     libro_id = len(libros) + 1
     libro = {
         "ID": libro_id,
-        "Título": titulo,
+        "Titulo": titulo,
         "Autor": autor,
         "Editorial": editorial,
-        "Año de Publicación": año_publicacion,
-        "Género": genero,
+        "Anio de Publicacion": año_publicacion,
+        "Genero": genero,
         "Cantidad Disponible": cantidad_disponible
     }
     libros.append(libro)

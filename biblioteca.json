@@ -2,21 +2,30 @@
     "libros": [
         {
             "ID": 1,
-            "TÃ­tulo": "harry",
+            "Titulo": "harry",
             "Autor": "jk",
             "Editorial": "atlantida",
-            "AÃ±o de PublicaciÃ³n": "1979",
-            "GÃ©nero": "fantasia",
+            "Anio de Publicacion": "1979",
+            "Genero": "fantasia",
             "Cantidad Disponible": 5
         },
         {
             "ID": 2,
-            "Título": "biblia",
+            "Titulo": "biblia",
             "Autor": "dios",
-            "Editorial": "nose",
-            "Año de Publicación": "0",
-            "Género": "religion",
-            "Cantidad Disponible": 5
+            "Editorial": "cielo",
+            "Anio de Publicacion": "0",
+            "Genero": "religion",
+            "Cantidad Disponible": 10
+        },
+        {
+            "ID": 3,
+            "Titulo": "tarzan",
+            "Autor": "disney",
+            "Editorial": "disney",
+            "Anio de Publicacion": "2000",
+            "Genero": "infantil",
+            "Cantidad Disponible": 6
         }
     ],
     "socios": [],
