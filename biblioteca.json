@@ -1,0 +1,24 @@
+{
+    "libros": [
+        {
+            "ID": 1,
+            "TÃ­tulo": "harry",
+            "Autor": "jk",
+            "Editorial": "atlantida",
+            "AÃ±o de PublicaciÃ³n": "1979",
+            "GÃ©nero": "fantasia",
+            "Cantidad Disponible": 5
+        },
+        {
+            "ID": 2,
+            "Título": "biblia",
+            "Autor": "dios",
+            "Editorial": "nose",
+            "Año de Publicación": "0",
+            "Género": "religion",
+            "Cantidad Disponible": 5
+        }
+    ],
+    "socios": [],
+    "prestamos": []
+}
