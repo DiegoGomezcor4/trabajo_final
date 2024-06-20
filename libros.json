@@ -1,20 +1,19 @@
 [
     {
         "id_libro": 1,
-        "titulo": "Cien a\u00f1os de soledad",
+        "titulo": "Cien años de soledad",
         "autor": "Gabriel Garcia Marquez",
         "editorial": "Sudamericana",
-        "a\u00c3\u00b1o_publicacion": 1967,
+        "anio_publicacion": "1967",
         "genero": "Novela",
-        "cantidad_disponible": 3,
-        "anio_publicacion": "1967"
+        "cantidad_disponible": 3
     },
     {
         "id_libro": 2,
         "titulo": "Don Quijote de la Mancha",
         "autor": "Miguel de Cervantes",
         "editorial": "Francisco de Robles",
-        "a\u00c3\u00b1o_publicacion": 1605,
+        "anio_publicacion": 1605,
         "genero": "Novela",
         "cantidad_disponible": 2
     },
