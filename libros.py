@@ -21,7 +21,7 @@ def agregar_libro(titulo, autor, editorial, año, genero, cantidad):
         "titulo": titulo,
         "autor": autor,
         "editorial": editorial,
-        "año_publicacion": año,
+        "anio_publicacion": año,
         "genero": genero,
         "cantidad_disponible": cantidad
     }
@@ -36,7 +36,7 @@ def editar_libro(id_libro, titulo, autor, editorial, año, genero, cantidad):
                 "titulo": titulo,
                 "autor": autor,
                 "editorial": editorial,
-                "año_publicacion": año,
+                "anio_publicacion": año,
                 "genero": genero,
                 "cantidad_disponible": cantidad
             })

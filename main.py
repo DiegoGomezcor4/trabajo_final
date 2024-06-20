@@ -113,7 +113,7 @@ def main():
             print("\t 1. Reporte por Socio")
             print("\t 2. Reporte por Libro")
             print("\t 3. Reporte por Fecha")
-            sub_opcion = input("\t Seleccione una opción: ")
+            sub_opcion = input("\t 1Seleccione una opción: ")
 
             if sub_opcion == "1":
                 id_socio = int(input("ID de Socio: "))

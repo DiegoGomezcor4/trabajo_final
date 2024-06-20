@@ -1,12 +1,13 @@
 [
     {
         "id_libro": 1,
-        "titulo": "Cien A\u00c3\u00b1os de Soledad",
-        "autor": "Gabriel Garc\u00c3\u00ada M\u00c3\u00a1rquez",
+        "titulo": "Cien a\u00f1os de soledad",
+        "autor": "Gabriel Garcia Marquez",
         "editorial": "Sudamericana",
         "a\u00c3\u00b1o_publicacion": 1967,
         "genero": "Novela",
-        "cantidad_disponible": 3
+        "cantidad_disponible": 3,
+        "anio_publicacion": "1967"
     },
     {
         "id_libro": 2,
@@ -22,7 +23,7 @@
         "titulo": "libro3",
         "autor": "autor3",
         "editorial": "editorial3",
-        "a\u00f1o_publicacion": "2003",
+        "anio_publicacion": "2003",
         "genero": "genero3",
         "cantidad_disponible": 3
     },
@@ -31,7 +32,7 @@
         "titulo": "libro4",
         "autor": "autor4",
         "editorial": "editorial4",
-        "a\u00f1o_publicacion": "2004",
+        "anio_publicacion": "2004",
         "genero": "genero4",
         "cantidad_disponible": 4
     }
