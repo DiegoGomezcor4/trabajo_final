@@ -18,13 +18,12 @@ def registrar_prestamo(id_socio, id_libro, fecha_prestamo, costo=0.0):
     prestamos = cargar_prestamos()
     id_prestamo = len(prestamos) + 1
     nuevo_prestamo = {
-        "ID": id_prestamo,
-        "IDSocio": id_socio,
-        "IDLibro": id_libro,
-        "FechaPrestamo": fecha_prestamo,
-        "Costo": costo,
-        "FechaDevolucion": None,
-        "Estado": "En Curso"
+        "id_prestamo": id_prestamo,
+        "id_socio": id_socio,
+        "id_libro": id_libro,
+        "fecha_prestamo": fecha_prestamo,
+        "fecha_devolucion": None,
+        "estado": "En Curso"
     }
     prestamos.append(nuevo_prestamo)
     guardar_prestamos(prestamos)
@@ -32,10 +31,10 @@ def registrar_prestamo(id_socio, id_libro, fecha_prestamo, costo=0.0):
 def registrar_devolucion(id_prestamo, fecha_devolucion):
     prestamos = cargar_prestamos()
     for prestamo in prestamos:
-        if prestamo["ID"] == id_prestamo and prestamo["Estado"] == "En Curso":
+        if prestamo["id_prestamo"] == id_prestamo and prestamo["estado"] == "En Curso":
             prestamo.update({
-                "FechaDevolucion": fecha_devolucion,
-                "Estado": "Devuelto"
+                "fecha_devolucion": fecha_devolucion,
+                "estado": "Devuelto"
             })
             guardar_prestamos(prestamos)
             return
@@ -45,11 +44,11 @@ def listar_prestamos():
 
 def prestamos_por_socio(id_socio):
     prestamos = cargar_prestamos()
-    return [prestamo for prestamo in prestamos if prestamo["IDSocio"] == id_socio]
+    return [prestamo for prestamo in prestamos if prestamo["id_socio"] == id_socio]
 
 def prestamos_por_libro(id_libro):
     prestamos = cargar_prestamos()
-    return [prestamo for prestamo in prestamos if prestamo["IDLibro"] == id_libro]
+    return [prestamo for prestamo in prestamos if prestamo["id_libro"] == id_libro]
 
 def prestamos_por_fecha(fecha_inicio, fecha_fin):
     prestamos = cargar_prestamos()
@@ -57,5 +56,5 @@ def prestamos_por_fecha(fecha_inicio, fecha_fin):
     fecha_fin = datetime.strptime(fecha_fin, '%Y-%m-%d')
     return [
         prestamo for prestamo in prestamos
-        if fecha_inicio <= datetime.strptime(prestamo["FechaPrestamo"], '%Y-%m-%d') <= fecha_fin
+        if fecha_inicio <= datetime.strptime(prestamo["fecha_prestamo"], '%Y-%m-%d') <= fecha_fin
     ]

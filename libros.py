@@ -17,13 +17,13 @@ def agregar_libro(titulo, autor, editorial, año, genero, cantidad):
     libros = cargar_libros()
     id_libro = len(libros) + 1
     nuevo_libro = {
-        "ID": id_libro,
-        "Titulo": titulo,
-        "Autor": autor,
-        "Editorial": editorial,
-        "Año": año,
-        "Genero": genero,
-        "Cantidad": cantidad
+        "id_libro": id_libro,
+        "titulo": titulo,
+        "autor": autor,
+        "editorial": editorial,
+        "año_publicacion": año,
+        "genero": genero,
+        "cantidad_disponible": cantidad
     }
     libros.append(nuevo_libro)
     guardar_libros(libros)
@@ -31,21 +31,21 @@ def agregar_libro(titulo, autor, editorial, año, genero, cantidad):
 def editar_libro(id_libro, titulo, autor, editorial, año, genero, cantidad):
     libros = cargar_libros()
     for libro in libros:
-        if libro["ID"] == id_libro:
+        if libro["id_libro"] == id_libro:
             libro.update({
-                "Titulo": titulo,
-                "Autor": autor,
-                "Editorial": editorial,
-                "Año": año,
-                "Genero": genero,
-                "Cantidad": cantidad
+                "titulo": titulo,
+                "autor": autor,
+                "editorial": editorial,
+                "año_publicacion": año,
+                "genero": genero,
+                "cantidad_disponible": cantidad
             })
             guardar_libros(libros)
             return
 
 def eliminar_libro(id_libro):
     libros = cargar_libros()
-    libros = [libro for libro in libros if libro["ID"] != id_libro]
+    libros = [libro for libro in libros if libro["id_libro"] != id_libro]
     guardar_libros(libros)
 
 def buscar_libro(criterio, valor):
