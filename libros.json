@@ -1,10 +1,10 @@
 [
     {
         "id_libro": 1,
-        "titulo": "Cien Años de Soledad",
-        "autor": "Gabriel García Márquez",
+        "titulo": "Cien A\u00c3\u00b1os de Soledad",
+        "autor": "Gabriel Garc\u00c3\u00ada M\u00c3\u00a1rquez",
         "editorial": "Sudamericana",
-        "año_publicacion": 1967,
+        "a\u00c3\u00b1o_publicacion": 1967,
         "genero": "Novela",
         "cantidad_disponible": 3
     },
@@ -13,8 +13,26 @@
         "titulo": "Don Quijote de la Mancha",
         "autor": "Miguel de Cervantes",
         "editorial": "Francisco de Robles",
-        "año_publicacion": 1605,
+        "a\u00c3\u00b1o_publicacion": 1605,
         "genero": "Novela",
         "cantidad_disponible": 2
+    },
+    {
+        "id_libro": 3,
+        "titulo": "libro3",
+        "autor": "autor3",
+        "editorial": "editorial3",
+        "a\u00f1o_publicacion": "2003",
+        "genero": "genero3",
+        "cantidad_disponible": 3
+    },
+    {
+        "id_libro": 4,
+        "titulo": "libro4",
+        "autor": "autor4",
+        "editorial": "editorial4",
+        "a\u00f1o_publicacion": "2004",
+        "genero": "genero4",
+        "cantidad_disponible": 4
     }
 ]

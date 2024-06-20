@@ -14,13 +14,13 @@ def main():
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
-            print("\nGestión de Libros")
-            print("1. Registrar Libro")
-            print("2. Editar Libro")
-            print("3. Eliminar Libro")
-            print("4. Buscar Libro")
-            print("5. Listar Libros")
-            sub_opcion = input("Seleccione una opción: ")
+            print("\n \t Gestión de Libros")
+            print("\t 1. Registrar Libro")
+            print("\t 2. Editar Libro")
+            print("\t 3. Eliminar Libro")
+            print("\t 4. Buscar Libro")
+            print("\t 5. Listar Libros")
+            sub_opcion = input("\t Seleccione una opción: ")
 
             if sub_opcion == "1":
                 titulo = input("Título: ")
@@ -54,12 +54,12 @@ def main():
                     print(libro)
 
         elif opcion == "2":
-            print("\nGestión de Socios")
-            print("1. Registrar Socio")
-            print("2. Editar Socio")
-            print("3. Eliminar Socio")
-            print("4. Listar Socios")
-            sub_opcion = input("Seleccione una opción: ")
+            print("\n \t Gestión de Socios")
+            print("\t 1. Registrar Socio")
+            print("\t 2. Editar Socio")
+            print("\t 3. Eliminar Socio")
+            print("\t 4. Listar Socios")
+            sub_opcion = input("\t Seleccione una opción: ")
 
             if sub_opcion == "1":
                 nombre = input("Nombre: ")
@@ -87,11 +87,11 @@ def main():
                     print(socio)
 
         elif opcion == "3":
-            print("\nGestión de Préstamos y Devoluciones")
-            print("1. Registrar Préstamo")
-            print("2. Registrar Devolución")
-            print("3. Listar Préstamos")
-            sub_opcion = input("Seleccione una opción: ")
+            print("\n \t Gestión de Préstamos y Devoluciones")
+            print("\t 1. Registrar Préstamo")
+            print("\t 2. Registrar Devolución")
+            print("\t 3. Listar Préstamos")
+            sub_opcion = input("\t Seleccione una opción: ")
 
             if sub_opcion == "1":
                 id_socio = int(input("ID de Socio: "))
@@ -109,11 +109,11 @@ def main():
                     print(prestamo)
 
         elif opcion == "4":
-            print("\nGenerar Reportes")
-            print("1. Reporte por Socio")
-            print("2. Reporte por Libro")
-            print("3. Reporte por Fecha")
-            sub_opcion = input("Seleccione una opción: ")
+            print("\n\t Generar Reportes")
+            print("\t 1. Reporte por Socio")
+            print("\t 2. Reporte por Libro")
+            print("\t 3. Reporte por Fecha")
+            sub_opcion = input("\t Seleccione una opción: ")
 
             if sub_opcion == "1":
                 id_socio = int(input("ID de Socio: "))
