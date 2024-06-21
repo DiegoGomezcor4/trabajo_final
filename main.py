@@ -14,7 +14,7 @@ def main():
         opcion = input("Seleccione una opción: ")
 
         if opcion == "1":
-            print("\n \t Gestión de Libros")
+            print("Gestión de Libros")
             print("\t 1. Registrar Libro")
             print("\t 2. Editar Libro")
             print("\t 3. Eliminar Libro")
@@ -30,8 +30,9 @@ def main():
                 genero = input("Género: ")
                 cantidad = int(input("Cantidad Disponible: "))
                 libros.agregar_libro(titulo, autor, editorial, año, genero, cantidad)
+
             elif sub_opcion == "2":
-                id_libro = int(input("ID de Libro: "))
+                id_libro = int(input("Ingrese ID del Libro a editar: "))
                 titulo = input("Título: ")
                 autor = input("Autor: ")
                 editorial = input("Editorial: ")
@@ -39,19 +40,32 @@ def main():
                 genero = input("Género: ")
                 cantidad = int(input("Cantidad Disponible: "))
                 libros.editar_libro(id_libro, titulo, autor, editorial, año, genero, cantidad)
+
             elif sub_opcion == "3":
                 id_libro = int(input("ID de Libro: "))
                 libros.eliminar_libro(id_libro)
+
             elif sub_opcion == "4":
                 criterio = input("Buscar por (Titulo/Autor/Editorial/Género): ")
                 valor = input(f"Ingrese el valor de {criterio}: ")
                 resultados = libros.buscar_libro(criterio, valor)
                 for libro in resultados:
-                    print(libro)
+                    #print(libro)
+                    info_libro = f"""
+                        ID del libro: {libro['id_libro']}
+                        Título: {libro['titulo']}
+                        Autor: {libro['autor']}
+                        Editorial: {libro['editorial']}
+                        Año de Publicación: {libro['anio_publicacion']}
+                        Género: {libro['genero']}
+                        Cantidad Disponible: {libro['cantidad_disponible']}
+                        """
+
+                    print(info_libro)
+                    
             elif sub_opcion == "5":
-                libros_list = libros.listar_libros()
-                for libro in libros_list:
-                    print(libro)
+                libros.listar_libros()
+                
 
         elif opcion == "2":
             print("\n \t Gestión de Socios")

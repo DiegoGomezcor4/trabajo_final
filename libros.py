@@ -1,5 +1,6 @@
 import json
 import os
+import pandas as pd
 
 LIBROS_FILE = 'libros.json'
 
@@ -26,6 +27,7 @@ def agregar_libro(titulo, autor, editorial, año, genero, cantidad):
         "cantidad_disponible": cantidad
     }
     libros.append(nuevo_libro)
+    print(f'\n \t MENSAJE: El libro {titulo}, fue agregado con el id: {id_libro}')
     guardar_libros(libros)
 
 def editar_libro(id_libro, titulo, autor, editorial, año, genero, cantidad):
@@ -41,6 +43,7 @@ def editar_libro(id_libro, titulo, autor, editorial, año, genero, cantidad):
                 "cantidad_disponible": cantidad
             })
             guardar_libros(libros)
+            print(f'\n \t MENSAJE: el libro: {titulo} fue editado correctamente')
             return
 
 def eliminar_libro(id_libro):
@@ -50,8 +53,19 @@ def eliminar_libro(id_libro):
 
 def buscar_libro(criterio, valor):
     libros = cargar_libros()
-    resultados = [libro for libro in libros if libro[criterio] == valor]
+    resultados = []
+    for libro in libros:
+        if libro[criterio] == valor:
+            resultados.append(libro)
     return resultados
 
 def listar_libros():
-    return cargar_libros()
+    
+    libros_list = cargar_libros()
+                
+    # agregar tabla
+    # Crear un DataFrame de pandas
+    df = pd.DataFrame(libros_list)
+
+    # Mostrar la tabla
+    print('\n',df)
