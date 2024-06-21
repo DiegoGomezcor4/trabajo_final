@@ -83,6 +83,7 @@ def main():
                 correo = input("Correo Electrónico: ")
                 telefono = input("Teléfono: ")
                 socios.agregar_socio(nombre, apellido, fecha_nacimiento, direccion, correo, telefono)
+            
             elif sub_opcion == "2":
                 id_socio = int(input("ID de Socio: "))
                 nombre = input("Nombre: ")
@@ -92,13 +93,14 @@ def main():
                 correo = input("Correo Electrónico: ")
                 telefono = input("Teléfono: ")
                 socios.editar_socio(id_socio, nombre, apellido, fecha_nacimiento, direccion, correo, telefono)
+            
             elif sub_opcion == "3":
                 id_socio = int(input("ID de Socio: "))
                 socios.eliminar_socio(id_socio)
+
             elif sub_opcion == "4":
-                socios_list = socios.listar_socios()
-                for socio in socios_list:
-                    print(socio)
+                socios.listar_socios()
+        
 
         elif opcion == "3":
             print("\n \t Gestión de Préstamos y Devoluciones")
