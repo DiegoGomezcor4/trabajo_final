@@ -25,5 +25,14 @@
         "direccion": "calle 216",
         "correo_electronico": "mail@mail.com",
         "telefono": "123456"
+    },
+    {
+        "id_socio": 4,
+        "nombre": "javier",
+        "apellido": "gomez",
+        "fecha_nacimiento": "8-4-1970",
+        "direccion": "rio chico 2129",
+        "correo_electronico": "mail@mail",
+        "telefono": "333555444"
     }
 ]
