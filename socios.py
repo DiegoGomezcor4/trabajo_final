@@ -50,13 +50,13 @@ def eliminar_socio(id_socio):
 
 def listar_socios():
     socios_list = cargar_socios()
-    
+    print("\n \t LISTADO DE SOCIOS: ")
     for socio in socios_list:
-        print(f"ID Socio: {socio['id_socio']}")
-        print(f"Nombre: {socio['nombre']}")
-        print(f"Apellido: {socio['apellido']}")
-        print(f"Fecha de Nacimiento: {socio['fecha_nacimiento']}")
-        print(f"Dirección: {socio['direccion']}")
-        print(f"Correo Electrónico: {socio['correo_electronico']}")
-        print(f"Teléfono: {socio['telefono']}")
-        print("-" * 20)
+        print(f"\n \tID Socio: {socio['id_socio']}")
+        print(f"\tNombre: {socio['nombre']}")
+        print(f"\tApellido: {socio['apellido']}")
+        print(f"\tFecha de Nacimiento: {socio['fecha_nacimiento']}")
+        print(f"\tDirección: {socio['direccion']}")
+        print(f"\tCorreo Electrónico: {socio['correo_electronico']}")
+        print(f"\tTeléfono: {socio['telefono']}")
+        print("\t" + "-" * 20)

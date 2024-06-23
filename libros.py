@@ -61,14 +61,14 @@ def buscar_libro(criterio, valor):
 def listar_libros():
     
     libros_list = cargar_libros()
-    
+    print("\n \t LISTADO DE LIBROS: ")
     for libro in libros_list:
-        print(f"ID Libro: {libro['id_libro']}")
-        print(f"Título: {libro['titulo']}")
-        print(f"Autor: {libro['autor']}")
-        print(f"Editorial: {libro['editorial']}")
-        print(f"Año de Publicación: {libro['anio_publicacion']}")
-        print(f"Género: {libro['genero']}")
-        print(f"Cantidad Disponible: {libro['cantidad_disponible']}")
-        print("-" * 20)
+        print(f"\n \t ID Libro: {libro['id_libro']}")
+        print(f"\t Título: {libro['titulo']}")
+        print(f"\t Autor: {libro['autor']}")
+        print(f"\t Editorial: {libro['editorial']}")
+        print(f"\t Año de Publicación: {libro['anio_publicacion']}")
+        print(f"\t Género: {libro['genero']}")
+        print(f"\t Cantidad Disponible: {libro['cantidad_disponible']}")
+        print("\t " + "-" * 20)
     
