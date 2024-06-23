@@ -1,6 +1,5 @@
 import json
 import os
-import pandas as pd
 
 LIBROS_FILE = 'libros.json'
 
@@ -62,10 +61,14 @@ def buscar_libro(criterio, valor):
 def listar_libros():
     
     libros_list = cargar_libros()
-                
-    # agregar tabla
-    # Crear un DataFrame de pandas
-    df = pd.DataFrame(libros_list)
-
-    # Mostrar la tabla
-    print('\n',df)
+    
+    for libro in libros_list:
+        print(f"ID Libro: {libro['id_libro']}")
+        print(f"Título: {libro['titulo']}")
+        print(f"Autor: {libro['autor']}")
+        print(f"Editorial: {libro['editorial']}")
+        print(f"Año de Publicación: {libro['anio_publicacion']}")
+        print(f"Género: {libro['genero']}")
+        print(f"Cantidad Disponible: {libro['cantidad_disponible']}")
+        print("-" * 20)
+    

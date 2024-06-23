@@ -1,6 +1,5 @@
 import json
 import os
-import pandas as pd
 
 SOCIOS_FILE = 'socios.json'
 
@@ -51,10 +50,13 @@ def eliminar_socio(id_socio):
 
 def listar_socios():
     socios_list = cargar_socios()
-                
-    # agregar tabla
-    # Crear un DataFrame de pandas
-    df = pd.DataFrame(socios_list)
-
-    # Mostrar la tabla
-    print('\n',df)
+    
+    for socio in socios_list:
+        print(f"ID Socio: {socio['id_socio']}")
+        print(f"Nombre: {socio['nombre']}")
+        print(f"Apellido: {socio['apellido']}")
+        print(f"Fecha de Nacimiento: {socio['fecha_nacimiento']}")
+        print(f"Dirección: {socio['direccion']}")
+        print(f"Correo Electrónico: {socio['correo_electronico']}")
+        print(f"Teléfono: {socio['telefono']}")
+        print("-" * 20)
