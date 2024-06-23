@@ -139,7 +139,6 @@ def main():
             print("\t 2. Registrar Devolución")
             print("\t 3. Listar Préstamos")
             sub_opcion = input("\t Seleccione una opción: ")
-
             # 3.1 REGISTRO PRESTAMO
             if sub_opcion == "1":
                 id_socio = int(input("ID de Socio: "))

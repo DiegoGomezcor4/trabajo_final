@@ -2,7 +2,28 @@ import json
 import os
 
 LIBROS_FILE = 'libros.json'
+LAST_ID_FILE = 'last_id_libro.txt'
 
+# Funciones para generar un id unico:
+def cargar_ultimo_id():
+    try:
+        with open(LAST_ID_FILE, 'r') as f:
+            return int(f.read().strip())
+    except FileNotFoundError:
+        return 0  # Si el archivo no existe, asumimos que el último ID es 0
+
+def guardar_ultimo_id(ultimo_id):
+    with open(LAST_ID_FILE, 'w') as f:
+        f.write(str(ultimo_id))
+
+def generar_nuevo_id():
+    ultimo_id = cargar_ultimo_id()
+    nuevo_id = ultimo_id + 1
+    guardar_ultimo_id(nuevo_id)
+    return nuevo_id
+
+
+# funciones de libros:
 def cargar_libros():
     if os.path.exists(LIBROS_FILE):
         with open(LIBROS_FILE, 'r', encoding='utf-8') as f:
@@ -15,9 +36,9 @@ def guardar_libros(libros):
         
 def agregar_libro(titulo, autor, editorial, año, genero, cantidad):
     libros = cargar_libros()
-    id_libro = len(libros) + 1
+    nuevo_id = generar_nuevo_id()
     nuevo_libro = {
-        "id_libro": id_libro,
+        "id_libro": nuevo_id,
         "titulo": titulo,
         "autor": autor,
         "editorial": editorial,
@@ -26,7 +47,7 @@ def agregar_libro(titulo, autor, editorial, año, genero, cantidad):
         "cantidad_disponible": cantidad
     }
     libros.append(nuevo_libro)
-    print(f'\n \t MENSAJE: El libro {titulo}, fue agregado con el id: {id_libro}')
+    print(f'\n \t MENSAJE: El libro {titulo}, fue agregado con el id: {nuevo_id}')
     guardar_libros(libros)
 
 def editar_libro(id_libro, titulo, autor, editorial, año, genero, cantidad):
@@ -47,7 +68,14 @@ def editar_libro(id_libro, titulo, autor, editorial, año, genero, cantidad):
 
 def eliminar_libro(id_libro):
     libros = cargar_libros()
-    libros = [libro for libro in libros if libro["id_libro"] != id_libro]
+    
+    #se genera una nueva lista sin el libro eliminado
+    nueva_lista_libros = []
+    for libro in libros:
+        if libro["id_libro"] != id_libro:
+            nueva_lista_libros.append(libro)
+    libros = nueva_lista_libros
+    
     guardar_libros(libros)
 
 def buscar_libro(criterio, valor):
