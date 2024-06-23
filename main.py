@@ -4,6 +4,7 @@ import prestamos
 import reportes
 
 def main():
+    # MENU PRINCIPAL
     while True:
         print("\nSistema de Gestión de Bibliotecas")
         print("1. Gestionar Libros")
@@ -13,6 +14,7 @@ def main():
         print("5. Salir")
         opcion = input("Seleccione una opción: ")
 
+        # 1 GESTIONAR LIBROS
         if opcion == "1":
             print("Gestión de Libros")
             print("\t 1. Registrar Libro")
@@ -22,6 +24,7 @@ def main():
             print("\t 5. Listar Libros")
             sub_opcion = input("\t Seleccione una opción: ")
 
+            # 1.1 REGISTRAR LIBRO
             if sub_opcion == "1":
                 titulo = input("Título: ")
                 autor = input("Autor: ")
@@ -31,6 +34,7 @@ def main():
                 cantidad = int(input("Cantidad Disponible: "))
                 libros.agregar_libro(titulo, autor, editorial, año, genero, cantidad)
 
+            # 1.2 EDITAR LIBRO
             elif sub_opcion == "2":
                 id_libro = int(input("Ingrese ID del Libro a editar: "))
                 titulo = input("Título: ")
@@ -41,10 +45,12 @@ def main():
                 cantidad = int(input("Cantidad Disponible: "))
                 libros.editar_libro(id_libro, titulo, autor, editorial, año, genero, cantidad)
 
+            # 1.3 ELIMINAR LIBRO
             elif sub_opcion == "3":
                 id_libro = int(input("ID de Libro: "))
                 libros.eliminar_libro(id_libro)
 
+            # 1.4 BUSCAR LIBRO
             elif sub_opcion == "4":
                 criterio = input("Buscar por (Titulo/Autor/Editorial/Género): ")
                 valor = input(f"Ingrese el valor de {criterio}: ")
@@ -62,11 +68,12 @@ def main():
                         """
 
                     print(info_libro)
-                    
+
+            # 1.5 LISTAR LIBROS        
             elif sub_opcion == "5":
                 libros.listar_libros()
                 
-
+        # 2 GESTIONAR SOCIOS
         elif opcion == "2":
             print("\n \t Gestión de Socios")
             print("\t 1. Registrar Socio")
@@ -75,6 +82,7 @@ def main():
             print("\t 4. Listar Socios")
             sub_opcion = input("\t Seleccione una opción: ")
 
+            # 2.1 REGISTRAR SOCIOS
             if sub_opcion == "1":
                 nombre = input("Nombre: ")
                 apellido = input("Apellido: ")
@@ -84,6 +92,7 @@ def main():
                 telefono = input("Teléfono: ")
                 socios.agregar_socio(nombre, apellido, fecha_nacimiento, direccion, correo, telefono)
             
+            # 2.2 EDITAR SOCIO
             elif sub_opcion == "2":
                 id_socio = int(input("ID de Socio: "))
                 nombre = input("Nombre: ")
@@ -94,14 +103,17 @@ def main():
                 telefono = input("Teléfono: ")
                 socios.editar_socio(id_socio, nombre, apellido, fecha_nacimiento, direccion, correo, telefono)
             
+
+            # 2.3 ELIMINAR SOCIO
             elif sub_opcion == "3":
                 id_socio = int(input("ID de Socio: "))
                 socios.eliminar_socio(id_socio)
 
+            # 2.4 LISTAR SOCIOS
             elif sub_opcion == "4":
                 socios.listar_socios()
         
-
+        # 3 GESTIONAR PRESTAMOS Y DEVOLUCIONES
         elif opcion == "3":
             print("\n \t Gestión de Préstamos y Devoluciones")
             print("\t 1. Registrar Préstamo")
@@ -109,21 +121,27 @@ def main():
             print("\t 3. Listar Préstamos")
             sub_opcion = input("\t Seleccione una opción: ")
 
+            # 3.1 REGISTRO PRESTAMO
             if sub_opcion == "1":
                 id_socio = int(input("ID de Socio: "))
                 id_libro = int(input("ID de Libro: "))
                 fecha_prestamo = input("Fecha de Préstamo: ")
                 costo = float(input("Costo (0 si no aplica): "))
                 prestamos.registrar_prestamo(id_socio, id_libro, fecha_prestamo, costo)
+
+            # 3.2 REGISTRO DEVOLUCION
             elif sub_opcion == "2":
                 id_prestamo = int(input("ID de Préstamo: "))
                 fecha_devolucion = input("Fecha de Devolución: ")
                 prestamos.registrar_devolucion(id_prestamo, fecha_devolucion)
+
+            # 3.3 LISTAR PRESTAMO
             elif sub_opcion == "3":
                 prestamos_list = prestamos.listar_prestamos()
                 for prestamo in prestamos_list:
                     print(prestamo)
 
+        # 4. GENERAR REPORTES
         elif opcion == "4":
             print("\n\t Generar Reportes")
             print("\t 1. Reporte por Socio")
@@ -131,23 +149,29 @@ def main():
             print("\t 3. Reporte por Fecha")
             sub_opcion = input("\t 1Seleccione una opción: ")
 
+            # 4.1 REPORTE POR SOCIO
             if sub_opcion == "1":
                 id_socio = int(input("ID de Socio: "))
                 reporte = reportes.reporte_por_socio(id_socio)
                 for r in reporte:
                     print(r)
+
+            # 4.2 REPORTE POR LIBRO
             elif sub_opcion == "2":
                 id_libro = int(input("ID de Libro: "))
                 reporte = reportes.reporte_por_libro(id_libro)
                 for r in reporte:
                     print(r)
+
+            # 4.3 REPORTE POR FECHA
             elif sub_opcion == "3":
                 fecha_inicio = input("Fecha de Inicio (YYYY-MM-DD): ")
                 fecha_fin = input("Fecha de Fin (YYYY-MM-DD): ")
                 reporte = reportes.reporte_por_fecha(fecha_inicio, fecha_fin)
                 for r in reporte:
                     print(r)
-
+                    
+        # 5 SALIR
         elif opcion == "5":
             print("Saliendo del sistema...")
             break
