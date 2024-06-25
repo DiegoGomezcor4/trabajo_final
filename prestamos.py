@@ -25,8 +25,10 @@ def registrar_prestamo(id_socio, id_libro, fecha_prestamo):
         "fecha_devolucion": None,
         "estado": "En Curso"
     }
+    
     prestamos.append(nuevo_prestamo)
     guardar_prestamos(prestamos)
+    
 
 def registrar_devolucion(id_prestamo, fecha_devolucion):
     prestamos = cargar_prestamos()
