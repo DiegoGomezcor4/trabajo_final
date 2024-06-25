@@ -3,6 +3,12 @@ import socios
 import prestamos
 import reportes
 
+"""
+enlace a el video explicativo: 
+https://youtu.be/gIm4Df63Z90
+
+"""
+
 def main():
     # MENU PRINCIPAL
     while True:
