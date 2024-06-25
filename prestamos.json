@@ -46,5 +46,13 @@
         "fecha_prestamo": "01-01-2020",
         "fecha_devolucion": "24-06-2024",
         "estado": "Devuelto"
+    },
+    {
+        "id_prestamo": 7,
+        "id_socio": 1,
+        "id_libro": 1,
+        "fecha_prestamo": "01-01-2021",
+        "fecha_devolucion": "24-06-2024",
+        "estado": "Devuelto"
     }
 ]

@@ -61,5 +61,14 @@
         "anio_publicacion": "800 a.c.",
         "genero": "epico",
         "cantidad_disponible": 5
+    },
+    {
+        "id_libro": 9,
+        "titulo": "ulises",
+        "autor": "james joyce",
+        "editorial": "shakespeare and company",
+        "anio_publicacion": "1922",
+        "genero": "novela",
+        "cantidad_disponible": 4
     }
 ]
