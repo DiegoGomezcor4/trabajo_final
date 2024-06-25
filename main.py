@@ -126,8 +126,7 @@ def main():
                 id_socio = int(input("ID de Socio: "))
                 id_libro = int(input("ID de Libro: "))
                 fecha_prestamo = input("Fecha de Préstamo: ")
-                costo = float(input("Costo (0 si no aplica): "))
-                prestamos.registrar_prestamo(id_socio, id_libro, fecha_prestamo, costo)
+                prestamos.registrar_prestamo(id_socio, id_libro, fecha_prestamo)
 
             # 3.2 REGISTRO DEVOLUCION
             elif sub_opcion == "2":
@@ -165,12 +164,12 @@ def main():
 
             # 4.3 REPORTE POR FECHA
             elif sub_opcion == "3":
-                fecha_inicio = input("Fecha de Inicio (YYYY-MM-DD): ")
-                fecha_fin = input("Fecha de Fin (YYYY-MM-DD): ")
+                fecha_inicio = input("Fecha de Inicio (DD-MM-YYYY): ")
+                fecha_fin = input("Fecha de Fin (DD-MM-YYYY): ")
                 reporte = reportes.reporte_por_fecha(fecha_inicio, fecha_fin)
                 for r in reporte:
                     print(r)
-                    
+                
         # 5 SALIR
         elif opcion == "5":
             print("Saliendo del sistema...")
