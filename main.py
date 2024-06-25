@@ -52,11 +52,31 @@ def main():
 
             # 1.4 BUSCAR LIBRO
             elif sub_opcion == "4":
-                criterio = input("Buscar por (Titulo/Autor/Editorial/Género): ")
-                valor = input(f"Ingrese el valor de {criterio}: ")
-                resultados = libros.buscar_libro(criterio, valor)
+                print("Busqueda de Libros")
+                print("\t\t t. Buscar Libro por titulo")
+                print("\t\t a. Buscar Libro por autor")
+                print("\t\t e. Buscar Libro por Editorial")
+                print("\t\t g. Buscar Libro por genero")
+                sub_sub_opcion = input("\t Seleccione una opción: ")
+                
+                if sub_sub_opcion == "t":
+                    criterio = "titulo"
+                    valor = input(f"Ingrese el valor de {criterio}: ")
+                    resultados = libros.buscar_libro(criterio, valor)
+                elif sub_sub_opcion == "a":
+                    criterio = "autor"
+                    valor = input(f"Ingrese el valor de {criterio}: ")
+                    resultados = libros.buscar_libro(criterio, valor)
+                elif sub_sub_opcion == "e":
+                    criterio = "editorial"
+                    valor = input(f"Ingrese el valor de {criterio}: ")
+                    resultados = libros.buscar_libro(criterio, valor)
+                elif sub_sub_opcion == "g":
+                    criterio = "genero"
+                    valor = input(f"Ingrese el valor de {criterio}: ")
+                    resultados = libros.buscar_libro(criterio, valor)
+                    
                 for libro in resultados:
-                    #print(libro)
                     info_libro = f"""
                         ID del libro: {libro['id_libro']}
                         Título: {libro['titulo']}
@@ -66,7 +86,6 @@ def main():
                         Género: {libro['genero']}
                         Cantidad Disponible: {libro['cantidad_disponible']}
                         """
-
                     print(info_libro)
 
             # 1.5 LISTAR LIBROS        
@@ -120,7 +139,6 @@ def main():
             print("\t 2. Registrar Devolución")
             print("\t 3. Listar Préstamos")
             sub_opcion = input("\t Seleccione una opción: ")
-
             # 3.1 REGISTRO PRESTAMO
             if sub_opcion == "1":
                 id_socio = int(input("ID de Socio: "))
