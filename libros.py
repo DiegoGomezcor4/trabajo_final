@@ -99,4 +99,28 @@ def listar_libros():
         print(f"\t Género: {libro['genero']}")
         print(f"\t Cantidad Disponible: {libro['cantidad_disponible']}")
         print("\t " + "-" * 20)
+
+
+def prestar_libro(id_libro):
+    libros = cargar_libros()
+    for libro in libros:
+        if libro["id_libro"] == id_libro:
+            if libro["cantidad_disponible"] > 0:
+                libro["cantidad_disponible"] -= 1
+                guardar_libros(libros)
+                print(f"\n \t MENSAJE: Se ha prestado el libro '{libro['titulo']}'. Quedan {libro['cantidad_disponible']} copias disponibles.")
+                return True
+            else:
+                print(f"\n \t MENSAJE: No hay copias disponibles del libro '{libro['titulo']}'.")
+                return False
+    print(f"\n \t MENSAJE: No se encontró el libro con ID {id_libro}.")
     
+def devolver_libro(id_libro):
+    libros = cargar_libros()
+    for libro in libros:
+        if libro["id_libro"] == id_libro:
+            libro["cantidad_disponible"] += 1
+            guardar_libros(libros)
+            print(f"\n \t MENSAJE: Se ha devuelto el libro '{libro['titulo']}'. Ahora hay {libro['cantidad_disponible']} copias disponibles.")
+            return
+    print(f"\n \t MENSAJE: No se encontró el libro con ID {id_libro}.")

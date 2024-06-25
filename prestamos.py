@@ -1,5 +1,6 @@
 import json
 import os
+import libros
 from datetime import datetime
 
 PRESTAMOS_FILE = 'prestamos.json'
@@ -26,8 +27,12 @@ def registrar_prestamo(id_socio, id_libro, fecha_prestamo):
         "estado": "En Curso"
     }
     
-    prestamos.append(nuevo_prestamo)
-    guardar_prestamos(prestamos)
+    if libros.prestar_libro(id_libro):
+        prestamos.append(nuevo_prestamo)
+        guardar_prestamos(prestamos)
+    
+    
+    
     
 
 def registrar_devolucion(id_prestamo, fecha_devolucion):
@@ -40,9 +45,13 @@ def registrar_devolucion(id_prestamo, fecha_devolucion):
             })
             print(f'MENSAJE: el prestamo {id_prestamo} ha sido devuelto')
             guardar_prestamos(prestamos)
+            libros.devolver_libro(prestamo["id_libro"])
             return
         elif prestamo["id_prestamo"] == id_prestamo and prestamo["estado"] == "Devuelto":
             print("El prestamo que intenta devolver ya ha sido devuelto!")
+            
+            
+
 
 def listar_prestamos():
     return cargar_prestamos()
